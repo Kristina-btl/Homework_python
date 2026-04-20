@@ -9,8 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from pages.CalculatorPage import CalculatorPage
 
 
-browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
@@ -34,7 +32,7 @@ def test_slow_calculator(driver):
     calc.press_button(calc.button_equal)
 
     # 4. Проверка результата
-    sleep(50)
+    WebDriverWait(driver, 50)
     result_text = calc.get_result()
     assert result_text == "15"
-    browser.quit()
+    
