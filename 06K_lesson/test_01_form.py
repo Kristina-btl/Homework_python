@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 @pytest.fixture
 def driver():
     driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
@@ -13,7 +14,7 @@ def driver():
     driver.quit()
 
 def test_form_submission_color_highlighting(driver):
-    wait = WebDriverWait(driver, 20)
+    WebDriverWait(driver, 20)
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
     
     driver.find_element(By.NAME, "first-name").send_keys("Иван")
@@ -32,15 +33,12 @@ def test_form_submission_color_highlighting(driver):
     assert "alert-danger" in zip_code_field.get_attribute("class"),"Zip code не подсвечен красным"
 
 # Проверяем остальные поля
-    green_fields = {"firstName": "Иван",
-            "lastName": "Петров",
-            "address": "Ленина, 55-3",
-            "email": "test@skypro.com",
-            "phoneNumber": "+7985899998787",
-            "city": "Москва",
-            "country": "Россия",
-            "job": "QA",
-            "company": "SkyPro"}
+    green_fields = ["first-name", "last-name",
+            "address","e-mail",
+            "phone","city",
+            "country","job-position",
+            "company"
+            ]
 
     for field_id in green_fields:
         field = driver.find_element(By.ID, field_id)
