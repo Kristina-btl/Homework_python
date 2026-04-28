@@ -5,8 +5,8 @@ class YouGileApi:
     def __init__(self, url):
         self.url = url
         self.login = {'LOGIN'}
-        self.password = ("PASSWORD")
-        self.company_id = "COMPANY_ID"
+        self.password = {'PASSWORD'}
+        self.company_id = {'COMPANY_ID'}
         self.key = self.get_token()
         self.headers = {
             'Authorization': f'Bearer {self.key}',

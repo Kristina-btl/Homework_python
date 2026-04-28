@@ -45,7 +45,6 @@ def test_get_project_with_id_negative():
     assert resp.status_code == 404
     assert resp.json()["message"] == "Проект не найден"
 
-
 def test_edit_project_positive():
     create_resp = api.create_project("Original_Title", users)
     project_id = create_resp.json()['id']
