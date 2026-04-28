@@ -1,3 +1,11 @@
+# данные для тестов
+LOGIN = "kbogolyuk@yandex.ru"
+PASSWORD = "Bandit1200!"
+COMPANY_ID = "11008db8-4e2a-42e1-9263-f015112e42a7"
+USER_ID = 9cb5b2fc-ca2c-4a01-bafc-103ae55d2a57
+
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
